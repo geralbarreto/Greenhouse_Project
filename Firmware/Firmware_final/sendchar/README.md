@@ -27,12 +27,18 @@ Para el proyecto en cuestión se utilizan tres sensores analógicos por lo que s
      
 Finalmente se utiliza el protocolo:   [11110011 0D1D2AAAAA 0AAAAAAA 0D30BBBBB 0BBBBBBB 000CCCCC 0CCCCCCC]
      
-**11110011:** Header para 3 canales
+     **11110011:** Header para 3 canales
+
 **D1:** Medida digital del fotorresistor
+
 **D2:** Medida digital del higrómetro
+
 **A:** Medida del acelerómetro
+
 **D3:** Bit auxiliar para indicar si está lloviendo
+
 **B:** Medida del sensor de temperatura
+
 **C:** Medida del sensor ultrasónico
 
 Para aplicar este protocolo a las medidas captadas se realizó el siguiente procedimiento:
