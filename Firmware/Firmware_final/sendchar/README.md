@@ -35,19 +35,14 @@ Finalmente se utiliza el protocolo:   [11110011 0D1D2AAAAA 0AAAAAAA 0D30BBBBB 0B
 
 Para aplicar este protocolo a las medidas captadas se realizó el siguiente procedimiento:
 
-La lectura del ADC es 
-[AAAAAaaaaaaa0000]
-Para tener solo los 12 bits se shiftean 4 bits a la 
-[AAAAAaaaaaaa0000]>>4 = [xxxxAAAAAaaaaaaa]
-Para los bits más significativos se shiftean 7 bits a la derecha
-[xxxxAAAAAaaaaaaa]>>7 = [xxxAAAAA]&[00011111] = [000AAAAA]
-Para los bits menos significativos se utiliza un AND 0x7F
-[xxxxAAAAAaaaaaaa]&[01111111] = [0aaaaaaa]
-Para los sensores digitales se utiliza un OR con 0x40 o 0x20 en caso de que se detecte un 1
-[000AAAAA] |[01000000]= [010AAAAA]		[000AAAAA] |[00100000]= [001AAAAA]
-     
-- [Events.h](https://github.com/geralbarreto/Greenhouse_Project/blob/master/Firmware/Firmware_final/sendchar/Sources/Events.h) Módulo de eventos (.h) de Processor Expert.
+La lectura del ADC es                                                            [AAAAAaaaaaaa0000]
+Para tener solo los 12 bits se shiftean 4 bits a la                              [AAAAAaaaaaaa0000]>>4 = [xxxxAAAAAaaaaaaa]
+Para los bits más significativos se shiftean 7 bits a la derecha                 [xxxxAAAAAaaaaaaa]>>7 = [xxxAAAAA]&[00011111] = [000AAAAA]
+Para los bits menos significativos se utiliza un AND 0x7F                        [01111111] = [0aaaaaaa]
+Para los sensores digitales se utiliza un OR con 0x40 o 0x20 en caso de que se detecte un 1   [000AAAAA] |[01000000]= [010AAAAA]		[000AAAAA] |[00100000]= [001AAAAA]
+
 - [Events.c](https://github.com/geralbarreto/Greenhouse_Project/blob/master/Firmware/Firmware_final/sendchar/Sources/Events.c) Módulo de eventos (.c) de Processor Expert.
+- [Events.h](https://github.com/geralbarreto/Greenhouse_Project/blob/master/Firmware/Firmware_final/sendchar/Sources/Events.h) Módulo de eventos (.h) de Processor Expert.
 
 La máquina de estados consiste en los estados esperar, medir y enviar, está controlada por interrupciones periódicas que se realizan cada 0.7ms, por lo tanto, se pasa del estado de espera al estado de medición con una frecuencia de 1.4KHz. Para realizar las mediciones del acelerómetro y el sensor de temperatura se utilizó el componente ADC disponible en la librería de Processor Expert que permite realizar la medición de distintos canales analógicos y devuelve el valor digital correspondiente en 12 bits. Para realizar las mediciones de la fotorresistencia y el higrómetro se utilizó el componente Bit que permite captar el valor digital medido por los pines de la tarjeta seleccionados. Finalmente, para realizar la medida del sensor ultrasónico se utilizó el componente Capture que permite medir el ancho de un pulso, esto es necesario debido a que el sensor ultrasónico emite un pulso y recibe un eco cuyo ancho es proporcional a la distancia a la cual se encuentra el objeto detectado. Cabe destacar que para activar el sensor ultrasónico fue necesario enviar un pulso de 10uS y período de 50ms lo cual se realizó implementando el componente PWM disponible en Processor Expert.
 
