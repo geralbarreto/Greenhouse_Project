@@ -17,23 +17,23 @@ En este módulo se configuran los componentes utilizados para la implementación
 
 0xFN 0DDAAAAA 0AAAAAAA
 
-*N:* Nro. Canales Mixtos
+**N:** Nro. Canales Mixtos
 
-*Dx:* Sensor Digital
+**Dx:** Sensor Digital
 
-*Ax:* Sensor Analógico
+**Ax:** Sensor Analógico
      
 Para el proyecto en cuestión se utilizan tres sensores analógicos por lo que se necesitan 3 canales mixtos cada uno de los cuales está dividido en 2 mitades de 8 bits.
      
 Finalmente se utiliza el protocolo:   [11110011 0D1D2AAAAA 0AAAAAAA 0D30BBBBB 0BBBBBBB 000CCCCC 0CCCCCCC]
      
-     **11110011:** Header para 3 canales
-     **D1:** Medida digital del fotorresistor
-     **D2:** Medida digital del higrómetro
-     **A:** Medida del acelerómetro
-     **D3:** Bit auxiliar para indicar si está lloviendo
-     **B:** Medida del sensor de temperatura
-     **C:** Medida del sensor ultrasónico
+**11110011:** Header para 3 canales
+**D1:** Medida digital del fotorresistor
+**D2:** Medida digital del higrómetro
+**A:** Medida del acelerómetro
+**D3:** Bit auxiliar para indicar si está lloviendo
+**B:** Medida del sensor de temperatura
+**C:** Medida del sensor ultrasónico
 
 Para aplicar este protocolo a las medidas captadas se realizó el siguiente procedimiento:
 
