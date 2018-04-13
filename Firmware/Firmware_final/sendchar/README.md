@@ -17,11 +17,11 @@ En este módulo se configuran los componentes utilizados para la implementación
 
         0xFN 0DDAAAAA 0AAAAAAA
 
-     **N:** Nro. Canales Mixtos
+        *N:* Nro. Canales Mixtos
 
-     **Dx:** Sensor Digital
+        *Dx:* Sensor Digital
 
-     **Ax:** Sensor Analógico
+        *Ax:* Sensor Analógico
      
 Para el proyecto en cuestión se utilizan tres sensores analógicos por lo que se necesitan 3 canales mixtos cada uno de los cuales está dividido en 2 mitades de 8 bits.
      
