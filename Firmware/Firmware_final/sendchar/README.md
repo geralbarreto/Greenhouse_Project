@@ -45,11 +45,11 @@ Finalmente se utiliza el protocolo:
 
 Para aplicar este protocolo a las medidas captadas se realizó el siguiente procedimiento:
 
-     La lectura del ADC es                                                            [AAAAAaaaaaaa0000]
-     Para tener solo los 12 bits se shiftean 4 bits a la                              [AAAAAaaaaaaa0000]>>4 = [xxxxAAAAAaaaaaaa]
-     Para los bits más significativos se shiftean 7 bits a la derecha                 [xxxxAAAAAaaaaaaa]>>7 = [xxxAAAAA]&[00011111] = [000AAAAA]
-     Para los bits menos significativos se utiliza un AND 0x7F                        [01111111] = [0aaaaaaa]
-     Para los sensores digitales se utiliza un OR con 0x40 o 0x20 en caso de que se detecte un 1   [000AAAAA] |[01000000]= [010AAAAA]		[000AAAAA] |[00100000]= [001AAAAA]
+     La lectura del ADC es                                                                         [AAAAAaaaaaaa0000]
+     Para tener solo los 12 bits se shiftean 4 bits a la                                           [AAAAAaaaaaaa0000]>>4 = [xxxxAAAAAaaaaaaa]
+     Para los bits más significativos se shiftean 7 bits a la derecha                              [xxxxAAAAAaaaaaaa]>>7 = [xxxAAAAA]&[00011111] = [000AAAAA]
+     Para los bits menos significativos se utiliza un AND 0x7F                                     [01111111] = [0aaaaaaa]
+     Para los sensores digitales se utiliza un OR con 0x40 o 0x20 en caso de que se detecte un 1   [000AAAAA] |[01000000]= [010AAAAA]  [000AAAAA] |[00100000]= [001AAAAA]
 
 
 - [Events.c](https://github.com/geralbarreto/Greenhouse_Project/blob/master/Firmware/Firmware_final/sendchar/Sources/Events.c) Módulo de eventos (.c) de Processor Expert.
