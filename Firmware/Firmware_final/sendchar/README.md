@@ -25,7 +25,9 @@ En este módulo se configuran los componentes utilizados para la implementación
      
 Para el proyecto en cuestión se utilizan tres sensores analógicos por lo que se necesitan 3 canales mixtos cada uno de los cuales está dividido en 2 mitades de 8 bits.
      
-Finalmente se utiliza el protocolo:   [11110011 0D1D2AAAAA 0AAAAAAA 0D30BBBBB 0BBBBBBB 000CCCCC 0CCCCCCC]
+Finalmente se utiliza el protocolo:
+
+     [11110011 0D1D2AAAAA 0AAAAAAA 0D30BBBBB 0BBBBBBB 000CCCCC 0CCCCCCC]
      
 **11110011:** Header para 3 canales
 
@@ -43,15 +45,11 @@ Finalmente se utiliza el protocolo:   [11110011 0D1D2AAAAA 0AAAAAAA 0D30BBBBB 0B
 
 Para aplicar este protocolo a las medidas captadas se realizó el siguiente procedimiento:
 
-La lectura del ADC es                                                            [AAAAAaaaaaaa0000]
-
-Para tener solo los 12 bits se shiftean 4 bits a la                              [AAAAAaaaaaaa0000]>>4 = [xxxxAAAAAaaaaaaa]
-
-Para los bits más significativos se shiftean 7 bits a la derecha                 [xxxxAAAAAaaaaaaa]>>7 = [xxxAAAAA]&[00011111] = [000AAAAA]
-
-Para los bits menos significativos se utiliza un AND 0x7F                        [01111111] = [0aaaaaaa]
-
-Para los sensores digitales se utiliza un OR con 0x40 o 0x20 en caso de que se detecte un 1   [000AAAAA] |[01000000]= [010AAAAA]		[000AAAAA] |[00100000]= [001AAAAA]
+     La lectura del ADC es                                                            [AAAAAaaaaaaa0000]
+     Para tener solo los 12 bits se shiftean 4 bits a la                              [AAAAAaaaaaaa0000]>>4 = [xxxxAAAAAaaaaaaa]
+     Para los bits más significativos se shiftean 7 bits a la derecha                 [xxxxAAAAAaaaaaaa]>>7 = [xxxAAAAA]&[00011111] = [000AAAAA]
+     Para los bits menos significativos se utiliza un AND 0x7F                        [01111111] = [0aaaaaaa]
+     Para los sensores digitales se utiliza un OR con 0x40 o 0x20 en caso de que se detecte un 1   [000AAAAA] |[01000000]= [010AAAAA]		[000AAAAA] |[00100000]= [001AAAAA]
 
 
 - [Events.c](https://github.com/geralbarreto/Greenhouse_Project/blob/master/Firmware/Firmware_final/sendchar/Sources/Events.c) Módulo de eventos (.c) de Processor Expert.
