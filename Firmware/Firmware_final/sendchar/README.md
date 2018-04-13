@@ -11,7 +11,7 @@ El siguiente repositorio contiene la implementación del firmware del proyecto I
 
 ## Lista de Módulos
 
-- [Firmware] (https://github.com/geralbarreto/Greenhouse_Project/blob/master/Firmware/Firmware_final/sendchar/Sources/ProcessorExpert.c)
+- [Firmware](https://github.com/geralbarreto/Greenhouse_Project/blob/master/Firmware/Firmware_final/sendchar/Sources/ProcessorExpert.c)
 
 En este módulo se configuran los componentes utilizados para la implementación del firmware, a su vez se utiliza una máquina de estados para recibir la data analógica y digital captada por la tarjeta y enviarla al ordenador vía serial mediante un protocolo de comunicaciones que se especifica a continuación:
 
