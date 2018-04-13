@@ -5,11 +5,11 @@
 El siguiente repositorio contiene la implementación del firmware del proyecto Invernadero Inteligente, en éste se establece la lógica utilizada por el microcontrolador Freescale MC9S08QE128 presente en la tarjeta de desarrollo DEMOQE128.
 
 ## Tabla de Contenidos
-- [Lista de Módulos](#lista-de-módulos)
+- [Módulos](#lista-de-módulos)
 - [Requisitos](#requisitos)
 - [Software](#software)
 
-## Lista de Módulos
+## Módulos
 
 - [Firmware](https://github.com/geralbarreto/Greenhouse_Project/blob/master/Firmware/Firmware_final/sendchar/Sources/ProcessorExpert.c)
 
